@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>superslicer-novnc</Name>
+  <Repository>redleader36/superslicer-novnc</Repository>
+  <Registry>https://hub.docker.com/r/redleader36/superslicer-novnc</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/redleader36/superslicer-novnc</Support>
+  <Project>https://github.com/supermerill/SuperSlicer</Project>
+  <Overview>SuperSlicer, now in your browser!&#xD;
+&#xD;
+This template has the minimum variables defined, but you can find additional details on the template at the URLs listed below.&#xD;
+&#xD;
+https://github.com/redleader36/superslicer-novnc&#xD;
+https://hub.docker.com/r/redleader36/superslicer-novnc</Overview>
+  <Category>HomeAutomation: Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <TemplateURL/>
+  <Icon>https://avatars.githubusercontent.com/u/6536403?s=300&v=4</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1643567143</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>SuperSlicer, now in your browser!&#xD;
+&#xD;
+This template has the minimum variables defined, but you can find additional details on the template at the URLs listed below.&#xD;
+&#xD;
+https://github.com/redleader36/superslicer-novnc&#xD;
+https://hub.docker.com/r/redleader36/superslicer-novnc</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>6080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/superslicer</HostDir>
+      <ContainerDir>/configs/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>/etc/ssl/certs/ca-certificates.crt</Value>
+      <Name>SSL_CERT_FILE</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Configs folder" Target="/configs/" Default="/mnt/cache/appdata/superslicer" Mode="rw" Description="Container Path: /configs/" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/superslicer</Config>
+  <Config Name="VNC Interface" Target="8080" Default="6080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">6080</Config>
+  <Config Name="SSL_CERT_FILE" Target="SSL_CERT_FILE" Default="/etc/ssl/certs/ca-certificates.crt" Mode="" Description="Needed to allow SuperSlicer to open without any prompts upon startup." Type="Variable" Display="always" Required="true" Mask="false">/etc/ssl/certs/ca-certificates.crt</Config>
+</Container>
